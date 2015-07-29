@@ -1,0 +1,14 @@
+{# Load Bootstrap #}
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+
+<!DOCTYPE html>
+<html>
+	<title>{% block title %}Cesar's Site{% endblock %}</title>
+<body>
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>

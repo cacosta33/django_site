@@ -1,0 +1,14 @@
+{# Load Bootstrap #}
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+
+{# Load Custom CSS #}
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'pokemon/style.css' %}" />
+
+<div class="col-md-4">
+	<h1>{{ pokemon_name }}</h1>
+	<h2>Pokedex Entry: {{ pokedex_number }}</h2>
+	<img src="{% static 'pokemon/images/' %}{{pokedex_number}}.png" alt="{{pokemon_name}}"/>
+	<p><b>Description:</b><br> {{ description }} </p>
+</div>
