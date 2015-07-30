@@ -1,0 +1,73 @@
+/* mixins, variables, etc */
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing{
+	-mox-box-sizing:		border-box;
+	-webkit-box-sizing:		border-box;
+	box-sizing:				border-box;
+}
+
+
+/* universal */
+
+.application_body{
+	font-family: Arial;
+	padding-top: 100px;
+}
+
+h1{
+	color: orange;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+section{
+	overflow: auto; /* This allows for scrolling */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+/* about_me */
+#profile_pic{
+	float: left;
+	text-align: left;
+	width: 250px;
+	height: 250px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-mox-border-radius: 50px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-mox-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+
+/* footer */
+
+footer{
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid $gray-medium-light;
+	color: $gray-light;
+}
+
+p#footer{
+	color: black;
+	float: left;
+}
+
+ul#footer{
+	float: right;
+	list-style: none;
+}
+
+li#footer{
+	float: left;
+	margin-left: 15px;
+}

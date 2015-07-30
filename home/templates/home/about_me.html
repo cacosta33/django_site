@@ -1,0 +1,13 @@
+{% extends "home/layouts/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+	<h1>About Me</h1>
+	<hr>
+	<div>
+		<img src="{% static 'home/images/CesarAcosta.jpg' %}" alt="Cesar Acosta" class="profile-image img-responsive pull-left" id="profile_pic">
+	</div>
+	<div>
+		<p><span style="padding-left:5em">Hello</span>, my name is Cesar Acosta and I'd just like to say thanks for at the very least reading this sentence.</p>
+	</div>
+{% endblock %}
