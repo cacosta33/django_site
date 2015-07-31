@@ -1,3 +1,5 @@
+
+
 {# Load Bootstrap #}
 	{% load bootstrap3 %}
 	{% bootstrap_css %}
@@ -6,9 +8,19 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="{% static 'pokemon/style.css' %}" />
 
-<div class="col-md-4">
+<div id="header">
+{% include "home/layouts/header.html" %}
+</div>
+
+{% block content %}
+<div class="col-md-4 application_body">
 	<h1>{{ pokemon_name }}</h1>
 	<h2>Pokedex Entry: {{ pokedex_number }}</h2>
-	<img src="{% static 'pokemon/images/' %}{{pokedex_number}}.png" alt="{{pokemon_name}}"/>
+	<img src="{% static 'pokemon/images/' %}{{pokedex_number}}.png" alt="{{pokemon_name}}" class="poke"/>
 	<p><b>Description:</b><br> {{ description }} </p>
+</div>
+{% endblock content %}
+
+<div id="footer">
+{% include "home/layouts/footer.html" %}
 </div>

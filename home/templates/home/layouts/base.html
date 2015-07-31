@@ -1,0 +1,25 @@
+{# Load Bootstrap #}
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+{# Include css #}
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'home/stylesheets/style.css' %}" />
+
+	
+
+<!DOCTYPE html>
+<html>
+	<title>{% block title %}Cesar's Site{% endblock %}</title>
+<body class="application_body">
+	<div id="header">
+		{% include "home/layouts/header.html" %}
+	</div>
+	<div class="container">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	<div id="footer">
+		{% include "home/layouts/footer.html" %}
+	</div>
+</body>
+</html>

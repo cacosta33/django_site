@@ -1,6 +1,6 @@
-{% extends "pokemon/base.html" %}
+{% extends "home/layouts/base.html" %}
 
-{% block title%}Pokemon List{% endblock %}
+{% block title%}Pokedex{% endblock %}
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'pokemon/style.css'%}" />
@@ -13,16 +13,24 @@
 		<tr>
 			<th>#</th>
 			<th>Name</th>
+			<th>Type 1</th>
+			<th>Type 2</th>
 		</tr>
 		{% for pokemon in pokemon_list %}
 			<tr>
 				<td>{{ pokemon.pokedex_number|stringformat:"03d" }}</td>
 				<td><a href="{% url 'pokemon:details' pokemon.pokedex_number %}">{{ pokemon.name }}
 					</a></td>
+				<td>{{ pokemon.type1 }}</td>
+				{% if pokemon.type2 == "none" %}
+					<td>-----</td>
+				{% else %}
+					<td>{{ pokemon.type2 }}</td>
+				{% endif %}
 			</tr>
 		{% endfor %}
 	{% else %}
 		<p>No pokemon are in the database</p>
 	{% endif %}
 
-{% endblock %}
+{% endblock content %}

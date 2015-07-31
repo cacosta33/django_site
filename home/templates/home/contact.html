@@ -1,0 +1,18 @@
+{% extends "home/layouts/base.html" %}
+
+{# Load Bootstrap #}
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+
+
+{% block content %}
+<div class="alert alert-info">
+	<strong>Reminder!</strong> Don't forget to include your name and other contact information in your message.
+</div>
+<form action="/contact/" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

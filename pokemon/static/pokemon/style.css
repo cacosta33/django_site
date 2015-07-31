@@ -1,4 +1,9 @@
 /* universal */
+
+.application_body{
+	padding-top: 75px;
+}
+
 ul{
 	list-style-type: none;
 }
@@ -12,4 +17,31 @@ ul{
 img{
 	width: 100;
 	height: 100;
+}
+
+/* footer */
+
+footer{
+	max-width: 100%;
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid $gray-medium-light;
+	color: $gray-light;
+
+}
+
+p#footer{
+	color: black;
+	float: left;
+}
+
+ul#footer{
+	float: right;
+	list-style: none;
+	padding-right: 5px;
+}
+
+li#footer{
+	float: left;
+	margin-left: 15px;
 }
