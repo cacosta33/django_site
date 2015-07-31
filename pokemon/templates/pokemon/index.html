@@ -1,6 +1,6 @@
-{% extends "pokemon/base.html" %}
+{% extends "home/layouts/base.html" %}
 
-{% block title%}Pokemon List{% endblock %}
+{% block title%}Pokedex{% endblock %}
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'pokemon/style.css'%}" />
@@ -33,4 +33,4 @@
 		<p>No pokemon are in the database</p>
 	{% endif %}
 
-{% endblock %}
+{% endblock content %}
