@@ -1,0 +1,14 @@
+{% extends "home/layouts/base.html" %}
+
+{% block content %}
+<div class="alert alert-success">
+	<strong>Success!</strong> Your message was sent successfully
+</div>
+<strong>Content</strong>
+<ul>
+	<li><b>Sender:</b> {{ sender }}</li>
+	<li><b>Subject:</b> {{ subject }}</li>
+	<li><b>Message:</b> {{ message }}</li>
+</ul>
+
+{% endblock content%}

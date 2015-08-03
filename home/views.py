@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.mail import send_mail
 
 from .form import ContactForm
@@ -15,7 +15,7 @@ def bad_request(request):
 	return render(request, "home/error_pages/404.html")
 
 def resume(request):
-	with open('home/static/home/images/CesarAcostaResume.pdf', 'r') as pdf:
+	with open('home/static/home/images/ca_website_resume.pdf', 'r') as pdf:
 		response = HttpResponse(pdf.read(), content_type='application/pdf')
 		response['Content-Disposition'] = 'filename=cesar_acosta_resume.pdf'
 		return response
@@ -28,10 +28,15 @@ def contact(request):
 		form = ContactForm(request.POST)
 		# check whether it's valid:
 		if form.is_valid():
+			subject = form.cleaned_data['subject']
 			message = form.cleaned_data['message']
 			sender = form.cleaned_data['sender']
-			return HttpResponseRedirect('home:index')
+
+			context = {'subject':subject, 'message':message, 'sender':sender }
+			#recepients = ['']
+
+			return render(request, 'home/contact/thanks.html', context)
 	else:
 		form = ContactForm()
+		return render(request, 'home/contact.html', {'form': form})
 
-	return render(request, 'home/contact.html', {'form': form})

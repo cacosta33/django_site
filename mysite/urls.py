@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls',namespace='polls')),
 	url(r'^pokemon/', include('pokemon.urls',namespace='pokemon')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'', include('home.urls', namespace='home')),
 ]

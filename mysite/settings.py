@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'home',
     'pokemon',
     'bootstrap3',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
