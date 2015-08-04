@@ -1,0 +1,27 @@
+{% extends 'home/layouts/base.html' %}
+{% block title %}Cesar's Blog{% endblock %}
+
+{% block content %}
+	<h2>Categories</h2>
+	{% if categories %}
+		<ul>
+		{% for category in categories %}
+			<li><a href="{% url 'blog:blog_category' category.slug %}">{{ category.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>There are no posts.</p>
+	{% endif %}
+
+	<h2>Posts</h2>
+	{% if posts %}
+		<ul>
+		{% for post in posts %}
+			<li><a href="{% url 'blog:blog_post' post.slug %}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>There are no posts.</p>
+	{% endif %}
+
+{% endblock %}
