@@ -1,10 +1,16 @@
 {% extends 'home/layouts/base.html' %}
-
+{% load tz %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
 
 	<h1>{{ post.title }}</h1>
-	{{ post.body }}
-	
+	{{ post.body }}<br /><br />
+
+	{% timezone "America/New_York" %}
+		Posted on <b>{{ post.posted|date:"D M j, Y" }}</b> at
+		<b>{{ post.posted|date:"g:i:s a T"}}</b>
+	{% endtimezone %}
+
+
 {% endblock %}

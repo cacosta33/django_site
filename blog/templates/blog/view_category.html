@@ -1,14 +1,19 @@
 {% extends 'home/layouts/base.html' %}
-{% block head_title %}Viewing category {{ category.title }}{% endblock %}
 {% block title %}{{ category.title }}{% endblock %}
 
 {% block content %}
+	<h1>{{ category.title }}</h1>
 	{% if posts %}
-		<ul>
-		{% for post in posts %}
-			<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+		<table class="table">		
+			<th>Post</th>
+			<th>Date Posted</th>
+		{% for post in posts reversed %}
+		<tr>
+			<td><a href="{% url 'blog:blog_post' post.slug %}">{{ post.title }}</a></td>
+			<td>{{ post.posted|date:"Y/m/d" }}</td>
+		</tr>
 		{% endfor %}
-		</ul>
+		</table>
 	{% else %}
 		<p>There are no posts.</p>
 	{% endif %}

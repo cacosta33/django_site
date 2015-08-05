@@ -6,7 +6,7 @@
 	{% if categories %}
 		<ul>
 		{% for category in categories %}
-			<li><a href="{% url 'blog:blog_category' category.slug %}">{{ category.title }}</a></li>
+			<li><h3><a href="{% url 'blog:blog_category' category.slug %}">{{ category.title }}</a></h3></li>
 		{% endfor %}
 		</ul>
 	{% else %}
@@ -15,11 +15,16 @@
 
 	<h2>Posts</h2>
 	{% if posts %}
-		<ul>
-		{% for post in posts %}
-			<li><a href="{% url 'blog:blog_post' post.slug %}">{{ post.title }}</a></li>
+		<table class="table">		
+			<th>Post</th>
+			<th>Date Posted</th>
+		{% for post in posts reversed %}
+		<tr>
+			<td><a href="{% url 'blog:blog_post' post.slug %}">{{ post.title }}</a></td>
+			<td>{{ post.posted|date:"Y/m/d" }}</td>
+		</tr>
 		{% endfor %}
-		</ul>
+		</table>
 	{% else %}
 		<p>There are no posts.</p>
 	{% endif %}
