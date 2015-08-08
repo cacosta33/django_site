@@ -5,12 +5,11 @@
 {% block content %}
 
 	<h1>{{ post.title }}</h1>
-	{{ post.body }}<br /><br />
+	<p class="content">{{ post.body }}</p><br />
 
 	{% timezone "America/New_York" %}
-		Posted on <b>{{ post.posted|date:"D M j, Y" }}</b> at
-		<b>{{ post.posted|date:"g:i:s a T"}}</b>
+		<p><span class="glyphicon glyphicon-time"></span> Posted on <b>{{ post.posted|date:"D M j, Y" }}</b> at
+		<b>{{ post.posted|date:"g:i:s a T"}}</b></p>
 	{% endtimezone %}
-
 
 {% endblock %}

@@ -11,6 +11,9 @@ def index(request):
 def about_me(request):
 	return render(request, 'home/about_me.html')
 
+def projects(request):
+	return render(request, 'home/projects.html')
+
 def bad_request(request):
 	return render(request, "home/error_pages/404.html")
 

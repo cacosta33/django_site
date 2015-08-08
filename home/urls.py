@@ -17,4 +17,7 @@ urlpatterns = [
 
 	#ex: /contact/thanks
 	url(r'^contact/thanks/$', views.contact, name='contact_thanks'),
+
+	#ex: /projects
+	url(r'^projects/$', views.projects, name='projects'),
 ]

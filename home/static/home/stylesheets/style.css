@@ -47,6 +47,11 @@ a:hover {
 	-mox-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
+p.content{
+	font-family: "Comic Sans";
+	font-size: 1.1em;
+}
+
 
 /* footer */
 
@@ -73,4 +78,28 @@ ul#footer{
 li#footer{
 	float: left;
 	margin-left: 15px;
+}
+
+/* about_me.html */
+.post-container{
+	margin: 20px 20px 0 0;
+	overflow: auto;
+}
+
+.post-thumb{
+	float: left;
+}
+
+.post-thumb img{
+	display: block;
+	margin-right: 20px;
+}
+
+.post-content{
+	margin-left: 210px;
+}
+
+.post-title{
+	font-weight: bold;
+	font-size: 200%;
 }
