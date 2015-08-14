@@ -3,16 +3,25 @@
 {# Load Bootstrap #}
 	{% load bootstrap3 %}
 	{% bootstrap_css %}
+{ # Load javascript, css #}
+	{% load staticfiles %}
+
 
 
 {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'home/stylesheets/countdown.css' %}" />
+<script src="{% static 'home/javascripts/main.js' %}"></script>
+
+
 <div class="alert alert-info">
 	<strong>Reminder!</strong> Don't forget to include your name and other contact information in your message.
 </div>
 <form action="/contact/thanks/" method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
-	<input type="submit" value="Submit" />
+	Character Count: <span class="countdown">2500</span><br />
+	<input id="submit" type="submit" value="Submit" />
 </form>
 
 {% endblock %}

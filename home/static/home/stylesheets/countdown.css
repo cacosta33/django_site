@@ -1,0 +1,29 @@
+.countdown{
+	background-color: transparent;
+	color: #8899a6;
+	display: inline-block;
+	width: 35px;
+	border: 0;
+	padding: 0 3px;
+	position: relative;
+	vertical-align: top;
+	text-align: right;
+	font-size: 14px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+}
+
+.warn{
+	color: #5c0002;
+}
+
+.superwarn{
+	color: #d40d12;
+}
+
+.max-reached{
+
+}
+
+.highlight_text{
+	background-color: #fcc;
+}
